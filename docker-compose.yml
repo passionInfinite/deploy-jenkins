@@ -1,0 +1,29 @@
+version: '3.6'
+
+services:
+  nginx:
+    build: ./scripts/nginx
+    links:
+      - jenkins
+    volumes:
+      - ./:/data
+    depends_on:
+      - jenkins
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+
+  jenkins:
+    image: "jenkins/jenkins:lts"
+    volumes:
+      - ./:/data
+    environment:
+      JENKINS_HOME: /data/jenkins
+    expose:
+      - 8080
+    restart: always
+
+
+
+

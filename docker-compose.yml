@@ -23,7 +23,3 @@ services:
     expose:
       - 8080
     restart: always
-
-
-
-

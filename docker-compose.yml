@@ -19,7 +19,7 @@ services:
     volumes:
       - ./:/data
     environment:
-      JENKINS_HOME: /data/jenkins
+      JENKINS_HOME: /data/build/jenkins
     expose:
       - 8080
     restart: always

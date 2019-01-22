@@ -12,7 +12,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    restart: always
+    restart: on-failure
 
   jenkins:
     image: "jenkins/jenkins:lts"
@@ -22,4 +22,4 @@ services:
       JENKINS_HOME: /data/build/jenkins
     expose:
       - 8080
-    restart: always
+    restart: on-failure
